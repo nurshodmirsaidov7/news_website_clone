@@ -1,16 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>salom</h1>
-    
-    <h1>{{news.title}}</h1>
-    <h4>{{news.body}}</h4>
-    <p>Published Date: {{news.published_time}}</p>
+{% extends "news/base.html" %}
 
-</body>
-</html>
+{% block title %}{{ object.title }}{% endblock title %}
+
+{% block content %}
+<section id="contentSection">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-8">
+      <div class="left_content">
+        <h2>{{ object.title }}</h2>
+        <p><small>Published: {{ object.published_time }}</small></p>
+        <div>{{ object.body|linebreaks }}</div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

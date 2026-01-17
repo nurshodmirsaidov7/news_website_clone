@@ -1,0 +1,55 @@
+{% extends "news/base.html" %}
+
+{% block title %}Single{% endblock title %}
+
+{% block content %}
+<section id="contentSection">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-8">
+      <div class="left_content">
+        <div class="single_page">
+          <ol class="breadcrumb">
+            <li><a href="{% url 'homepage' %}">Home</a></li>
+            <li><a href="#">Technology</a></li>
+            <li class="active">Mobile</li>
+          </ol>
+          <h1>Morbi dapibus, enim quis luctus interdum</h1>
+          <div class="post_commentbox">
+            <a href="#"><i class="fa fa-user"></i>Wpfreeware</a>
+            <span><i class="fa fa-calendar"></i>6:49 AM</span>
+            <a href="#"><i class="fa fa-tags"></i>Technology</a>
+          </div>
+          <div class="single_page_content">
+            <img class="img-center" src="{% static 'images/single_post_img.jpg' %}" alt="" />
+            <p>
+              Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus,
+              egestas imperdiet nulla nisl quis mauris. Suspendisse a pharetra urna.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4">
+      <aside class="right_content">
+        <div class="single_sidebar">
+          <h2><span>Popular Post</span></h2>
+          <ul class="spost_nav">
+            <li>
+              <div class="media wow fadeInDown">
+                <a href="{% url 'all_news_list' %}" class="media-left">
+                  <img alt="" src="{% static 'images/post_img1.jpg' %}" />
+                </a>
+                <div class="media-body">
+                  <a href="{% url 'all_news_list' %}" class="catg_title">
+                    Aliquam malesuada diam eget turpis varius 1</a
+                  >
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+{% endblock content %}
